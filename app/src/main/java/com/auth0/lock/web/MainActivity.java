@@ -2,6 +2,7 @@ package com.auth0.lock.web;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
@@ -34,6 +35,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                 super.onReceivedError(view, errorCode, description, failingUrl);
+                Log.e(MainActivity.class.getName(), "failed to load Url " + failingUrl + " error: " + errorCode + " description " + description);
             }
         });
     }
